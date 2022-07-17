@@ -32,6 +32,8 @@ df.groupby("order_channel").agg({"master_id":"count",
 df.sort_values("customer_value_total", ascending=False)[0:10]
 df.sort_values("Order_num_total", ascending=False)[0:10]
 
+# Functionalizing the Data Preparation Process
+
 def data_preparation(dataframe):
     dataframe["Order_num_total"] = dataframe["order_num_total_ever_online"] + dataframe["order_num_total_ever_offline"]
     dataframe["customer_value_total"] = dataframe["customer_value_total_ever_online"] + dataframe["customer_value_total_ever_offline"]
